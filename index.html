@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио - Главная</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container">
+            <a class="navbar-brand" href="#">Имя Студента</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pages/projects.html">Проекты</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pages/diary.html">Дневник</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pages/contacts.html">Контакты</a></li>
+                    <li class="nav-item">
+                        <button class="btn btn-sm theme-toggle" id="themeToggle">🌙</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h1 class="display-4 fw-bold">Привет! Я студент</h1>
+                <p class="lead">группы 30БО-99-99</p>
+                <p class="mb-4">Увлекаюсь веб-разработкой</p>
+                <a href="../assets/resume.pdf" class="btn btn-primary btn-lg" download>Скачать резюме</a>
+            </div>
+            <div class="col-md-6 text-center">
+                <img src="../images/photo.jpg" alt="Фото студента" class="img-fluid rounded-circle profile-img">
+            </div>
+        </div>
+
+        <section class="skills-section mt-5">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Мои навыки</h3>
+                    <div class="skill-item">
+                        <span>HTML/CSS</span>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 90%">90%</div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span>JavaScript</span>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 80%">80%</div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span>Bootstrap</span>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 85%">85%</div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span>React</span>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 60%">60%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects-preview mt-5">
+            <h3>Лучшие проекты</h3>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <div class="card project-card">
+                        <div class="card-body text-center">
+                            <h5>П1</h5>
+                            <p>Личный сайт</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card project-card">
+                        <div class="card-body text-center">
+                            <h5>П2</h5>
+                            <p>Todo-приложение</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card project-card">
+                        <div class="card-body text-center">
+                            <h5>П3</h5>
+                            <p>Интернет-магазин</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-custom text-center py-4 mt-5">
+        <div class="container">
+            <p>&copy; 2025 Контакты</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../scripts/main.js"></script>
+</body>
+</html>
