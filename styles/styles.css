@@ -175,8 +175,42 @@ body {
         font-size: 2rem;
     }
 }
-.card-img-top {
-    height: 270px; /* или нужная вам высота */
-    width: 100%; /* или нужная ширина */
-    object-fit: cover; /* чтобы изображение заполняло область */
+
+.skip-link {
+  position: absolute;
+  inset-inline-start: 1rem;
+  inset-block-start: -100%;
+  z-index: 10000;
+  padding: .5rem .75rem;
+  background: #111;
+  color: #fff;
+  border-radius: .5rem;
+  text-decoration: none;
 }
+.skip-link:focus,
+.skip-link:focus-visible {
+  inset-block-start: 1rem;
+}
+
+:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 2px;
+}
+
+@media (pointer: coarse) {
+  a, button, .nav-link {
+    min-height: 44px;
+    padding-block: .75rem;
+  }
+}
+.card-img-top,
+.project-card img {
+  display: block;
+  width: 100%;
+  height: auto;          /* 🔹 убираем фиксированную высоту */
+  aspect-ratio: 4 / 3;   /* 🔹 добавляем стабильную пропорцию */
+  object-fit: cover;     /* 🔹 чтобы красиво обрезалось, если фото не того формата */
+  /*border-top-left-radius: .75rem;
+  border-top-right-radius: .75rem;*/
+}
+
