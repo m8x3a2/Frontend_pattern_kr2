@@ -214,3 +214,13 @@ body {
   border-top-right-radius: .75rem;*/
 }
 
+.responsive-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.projects-preview .row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
