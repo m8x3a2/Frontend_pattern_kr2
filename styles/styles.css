@@ -224,3 +224,30 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1rem;
 }
+/* Единая высота и стабильный размер карточек в сетке */
+.project-item {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Фиксированная высота области изображения */
+.project-item .card-img-top {
+  width: 100%;
+  height: 270px;       /* одинаковая высота, как в исходном варианте */
+  object-fit: cover;
+}
+
+/* Чтобы скрытые карточки не ломали сетку */
+.project-item[style*="display: none"] {
+  display: none !important;
+}
+
+/* Гарантируем, что grid не «пересчитывает» при фильтрации */
+.projects-preview .row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  align-items: start;
+}
+
