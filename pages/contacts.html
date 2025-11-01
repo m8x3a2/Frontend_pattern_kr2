@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Портфолио - Контакты</title>
+  <title>Портфолио – Контакты</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../styles/styles.css">
 </head>
@@ -11,10 +11,12 @@
   <a class="skip-link" href="#main">Перейти к основному содержимому</a>
 
   <header>
-    <nav class="navbar navbar-expand-lg navbar-custom">
+    <nav class="navbar navbar-expand-lg navbar-custom"  aria-label="Основная навигация">
       <div class="container">
         <a class="navbar-brand" href="../index.html">Max</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav"
+                aria-expanded="false" aria-label="Открыть меню навигации">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -22,9 +24,10 @@
             <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
             <li class="nav-item"><a class="nav-link" href="projects.html">Проекты</a></li>
             <li class="nav-item"><a class="nav-link" href="diary.html">Дневник</a></li>
-            <li class="nav-item"><a class="nav-link active" href="contacts.html">Контакты</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="contacts.html">Контакты</a></li>
             <li class="nav-item">
-              <button class="btn btn-sm theme-toggle" id="themeToggle">🌙</button>
+              <button class="btn btn-sm theme-toggle" id="themeToggle" type="button"
+                      aria-pressed="false" aria-label="Переключить тему">🌙</button>
             </li>
           </ul>
         </div>
@@ -32,60 +35,83 @@
     </nav>
   </header>
 
-  <main id="main" class="container my-5">
+  <main id="main" class="container my-5" tabindex="-1">
     <h1 class="text-center mb-4">Свяжитесь со мной</h1>
-    <div class="row">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-body">
-                        <form id="contactForm">
-                            <div class="mb-3">
-                                <label for="name" class="form-label">Имя</label>
-                                <input type="text" class="form-control" id="name" required>
-                                <div class="invalid-feedback">Пожалуйста, введите ваше имя</div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="email" required>
-                                <div class="invalid-feedback">Пожалуйста, введите корректный email</div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="message" class="form-label">Сообщение</label>
-                                <textarea class="form-control" id="message" rows="5" required></textarea>
-                                <div class="invalid-feedback">Пожалуйста, введите сообщение</div>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Отправить сообщение</button>
-                        </form>
-                    </div>
+    <div class="row" role="region" aria-labelledby="form-title">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-body">
+            <form id="contactForm" novalidate aria-describedby="form-desc">
+              <fieldset>
+                <legend id="form-title" class="h3 mb-3">Форма обратной связи</legend>
+                <p id="form-desc" class="visually-hidden">
+                  Все поля обязательны для заполнения.
+                </p>
+
+                <div class="mb-3">
+                  <label for="name" class="form-label">Имя <span aria-hidden="true">*</span></label>
+                  <input type="text" class="form-control" id="name" name="name"
+                         required aria-required="true" aria-invalid="false"
+                         aria-describedby="nameError">
+                  <div id="nameError" class="invalid-feedback">
+                    Пожалуйста, введите ваше имя
+                  </div>
                 </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Контакты</h5>
-                        <div class="contact-info">
-                            <div class="d-flex align-items-center mb-3">
-                                <!--<img src="../images/icons/email.svg" alt="Email" class="contact-icon me-2">-->
-                                <span>📧 student@edu.ru</span>
-                            </div>
-                            <div class="d-flex align-items-center mb-3">
-                                <!--<img src="../images/icons/github.svg" alt="GitHub" class="contact-icon me-2">-->
-                                <span>📱 GitHub: username</span>
-                            </div>
-                            <div class="d-flex align-items-center mb-3">
-                                <!--<img src="../images/icons/location.svg" alt="Location" class="contact-icon me-2">-->
-                                <span>📍 Город, Страна</span>
-                            </div>
-                        </div>
-                    </div>
+
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email <span aria-hidden="true">*</span></label>
+                  <input type="email" class="form-control" id="email" name="email"
+                         required aria-required="true" aria-invalid="false"
+                         aria-describedby="emailError">
+                  <div id="emailError" class="invalid-feedback">
+                    Пожалуйста, введите корректный email
+                  </div>
                 </div>
-            </div>
+
+                <div class="mb-3">
+                  <label for="message" class="form-label">Сообщение <span aria-hidden="true">*</span></label>
+                  <textarea class="form-control" id="message" name="message" rows="5"
+                            required aria-required="true" aria-invalid="false"
+                            aria-describedby="messageError"></textarea>
+                  <div id="messageError" class="invalid-feedback">
+                    Пожалуйста, введите сообщение
+                  </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" aria-label="Отправить сообщение">
+                  Отправить сообщение
+                </button>
+              </fieldset>
+            </form>
+          </div>
         </div>
+      </div>
+
+      <aside class="col-md-4" aria-label="Контактная информация">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title h5">Контакты</h2>
+            <ul class="list-unstyled contact-info mb-0">
+              <li class="d-flex align-items-center mb-3">
+                <span><span aria-hidden="true">📧</span> student@edu.ru</span>
+              </li>
+              <li class="d-flex align-items-center mb-3">
+                <span><span aria-hidden="true">📱</span> GitHub: username</span>
+              </li>
+              <li class="d-flex align-items-center mb-3">
+                <span><span aria-hidden="true">📍</span> Город, Страна</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+    </div>
   </main>
 
-  <footer class="footer-custom text-center py-4 mt-5">
-    <div class="container"><p>&copy; 2025 Контакты</p></div>
+  <footer class="footer-custom text-center py-4 mt-5" >
+    <div class="container">
+      <p>&copy; 2025 Контакты</p>
+    </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

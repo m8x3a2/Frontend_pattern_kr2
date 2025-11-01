@@ -224,30 +224,11 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1rem;
 }
-/* Единая высота и стабильный размер карточек в сетке */
-.project-item {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
 
-/* Фиксированная высота области изображения */
-.project-item .card-img-top {
-  width: 100%;
-  height: 270px;       /* одинаковая высота, как в исходном варианте */
-  object-fit: cover;
+/* Фокус для кнопки смены темы */
+.theme-toggle:focus-visible {
+  outline: 3px solid #2563eb;     /* синий контур, как у остальных */
+  outline-offset: 3px;            /* чуть отступает от кнопки */
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.3); /* мягкое свечение */
 }
-
-/* Чтобы скрытые карточки не ломали сетку */
-.project-item[style*="display: none"] {
-  display: none !important;
-}
-
-/* Гарантируем, что grid не «пересчитывает» при фильтрации */
-.projects-preview .row {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.25rem;
-  align-items: start;
-}
-
